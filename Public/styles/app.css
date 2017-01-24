@@ -14,38 +14,64 @@ body {
 	position: relative;
 }
 
-#droplet {
-    width: 50px;
-    display: inline-block;
-    margin-right: 12px;
-    float: left;
+
+a {
+	color: #92A8D1;
+	text-decoration: none;
+	border-bottom: 1px dotted;
 }
 
-.message {
-	position: absolute;
-	width: 256px;
-    height: 64px;
-	text-align: center;
+a:hover {
+	color: #F7CAC9;
+}
+
+div.wrapper {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	position: relative;
 	top: 50%;
-	left: 50%;
-	margin-left: -128px;
-    margin-top: -32px;
-    line-height: 0;
+	transform: translateY(-50%);
+	margin-top: -25px; //adjust eye level
 }
 
-.message h1 {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    line-height: 64px;
-    float: left;
-    font-family: 'Quicksand';
-    font-weight: 500;
-    font-size: 36px;
+h1#logo {
+	text-indent: -9999px;
+	background-image: url(../images/vapor-logo.png);
+	background-size: 100%;
+	width: 347.5px;
+	height: 84px;
+	margin: 0 auto;
 }
 
-.message img {
-    height: 100%;
-    display: inline-block;
-    float: left;
+nav.main {
+	text-align: center;
+	margin-top: 20px;
+}
+nav.main ul {
+	margin: 0;
+	padding: 0;
+}
+nav.main ul li {
+	display: inline-block;
+	padding: 0 5px;
+}
+
+
+footer.main {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom: 10px;
+}
+
+footer.main p {
+	margin: 0;
+	padding: 0;
+	color: #ccc;
+	font-weight: 300;
+}
+
+footer.main p a {
+	color: #ccc;
 }
