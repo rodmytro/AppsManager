@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "BC743A28AEE703E5C03F45B05374D040EBB3B5D6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BC743A28AEE703E5C03F45B05374D040EBB3B5D6" : 9223372036854775807,
+    "8FE2B4BB55A3C9D7B3B78FD1E2302636E924BDDC" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "341820F4-3934-4735-B421-1C6AA81D1A21",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BC743A28AEE703E5C03F45B05374D040EBB3B5D6" : "Managerly\/",
+    "8FE2B4BB55A3C9D7B3B78FD1E2302636E924BDDC" : "Managerly\/Packages\/Jay-1.0.1\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "VaporApp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "VaporApp.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/DanToml\/Jay.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8FE2B4BB55A3C9D7B3B78FD1E2302636E924BDDC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rodmytro\/Managerly.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BC743A28AEE703E5C03F45B05374D040EBB3B5D6"
+    }
+  ]
+}
