@@ -33,9 +33,11 @@ let _ = drop.config["app", "key"]?.string ?? ""
     You can override the working directory by passing
     --workDir to the application upon execution.
 */
-drop.get("/") { request in
+drop.get("/") {
+    request in
     return try drop.view.make("welcome.html")
 }
+
 
 /**
     Return JSON requests easy by wrapping
@@ -50,17 +52,18 @@ drop.get("/") { request in
     the data structure into any JSON data as if it
     were a native JSON data type.
 */
-drop.get("json") { request in
+drop.get("json") {
+    request in
     return try JSON(node: [
-        "number": 123,
-        "string": "test",
-        "array": try JSON(node: [
-            0, 1, 2, 3
-        ]),
-        "dict": try JSON(node: [
-            "name": "Vapor",
-            "lang": "Swift"
-        ])
+            "number": 123,
+            "string": "test",
+            "array": try JSON(node: [
+                    0, 1, 2, 3
+            ]),
+            "dict": try JSON(node: [
+                    "name": "Vapor",
+                    "lang": "Swift"
+            ])
     ])
 }
 
@@ -86,10 +89,12 @@ drop.get("json") { request in
     - Form URL-Encoded: request.data.formEncoded
     - MultiPart: request.data.multipart
 */
-drop.get("data", Int.self) { request, int in
+
+drop.get("data", Int.self) {
+    request, int in
     return try JSON(node: [
-        "int": int,
-        "name": request.data["name"]?.string ?? "no name"
+            "int": int,
+            "name": request.data["name"]?.string ?? "no name"
     ])
 }
 
@@ -103,7 +108,8 @@ drop.get("data", Int.self) { request, int in
 
     The User model included in this example is StringInitializable.
 */
-drop.get("posts", Int.self) { request, postId in
+drop.get("posts", Int.self) {
+    request, postId in
     return "Requesting post with ID \(postId)"
 }
 
@@ -120,9 +126,10 @@ drop.get("posts", Int.self) { request, postId in
 let users = UserController(droplet: drop)
 drop.resource("users", users)
 
-drop.get("leaf") { request in
+drop.get("leaf") {
+    request in
     return try drop.view.make("template", [
-        "greeting": "Hello, world!"
+            "greeting": "Hello, world!"
     ])
 }
 
@@ -132,11 +139,12 @@ drop.get("leaf") { request in
     defined as an alphanumeric string that
     is between 5 and 20 characters.
 */
+
 class Name: ValidationSuite {
     static func validate(input value: String) throws {
         let evaluation = OnlyAlphanumeric.self
-            && Count.min(5)
-            && Count.max(20)
+                && Count.min(5)
+        && Count.max(20)
 
         try evaluation.validate(input: value)
     }
@@ -147,6 +155,7 @@ class Name: ValidationSuite {
     employee class ensures only valid
     data will be stored.
 */
+
 class Employee {
     var email: Valid<Email>
     var name: Valid<Name>
@@ -161,11 +170,12 @@ class Employee {
     Allows any instance of employee
     to be returned as Json
 */
+
 extension Employee: JSONRepresentable {
     func makeJSON() throws -> JSON {
         return try JSON(node: [
-            "email": email.value,
-            "name": name.value
+                "email": email.value,
+                "name": name.value
         ])
     }
 }
@@ -179,7 +189,8 @@ extension Employee: JSONRepresentable {
     This simple plaintext response is useful
     when benchmarking Vapor.
 */
-drop.get("plaintext") { request in
+drop.get("plaintext") {
+    request in
     return "Hello, World!"
 }
 
@@ -189,11 +200,12 @@ drop.get("plaintext") { request in
     the session variable and–if the user has cookies
     enabled–the data will persist with each request.
 */
-drop.get("session") { request in
+drop.get("session") {
+    request in
     let json = try JSON(node: [
-        "session.data": "\(request.session().data["name"])",
-        "request.cookies": "\(request.cookies)",
-        "instructions": "Refresh to see cookie and session get set."
+            "session.data": "\(request.session().data["name"])",
+            "request.cookies": "\(request.cookies)",
+            "instructions": "Refresh to see cookie and session get set."
     ])
     var response = try Response(status: .ok, json: json)
 
@@ -216,18 +228,25 @@ drop.get("session") { request in
     The first parameter to `app.localization` is
     the language code.
 */
-drop.get("localization", String.self) { request, lang in
+drop.get("localization", String.self) {
+    request, lang in
     return try JSON(node: [
-        "title": drop.localization[lang, "welcome", "title"],
-        "body": drop.localization[lang, "welcome", "body"]
+            "title": drop.localization[lang, "welcome", "title"],
+            "body": drop.localization[lang, "welcome", "body"]
     ])
 }
 
 // my small ads example
-drop.get("ads") { request in
+drop.get("ads") {
+    request in
     return try JSON(node: [
             "number": 1
     ])
+}
+
+drop.get("about") {
+    request in
+    return try drop.view.make("about.html")
 }
 
 /**
