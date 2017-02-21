@@ -1,4 +1,6 @@
 import Vapor
+import VaporPostgreSQL
+import PostgreSQL
 import HTTP
 
 /**
@@ -240,7 +242,11 @@ drop.get("localization", String.self) {
 drop.get("ads") {
     request in
     return try JSON(node: [
-            "number": 1
+            "banner_in_game" : false,
+            "rewarded_to_resume": true,
+            "inter_after_level": true,
+            "number_inter_iterations" : 3
+        
     ])
 }
 
@@ -248,6 +254,17 @@ drop.get("about") {
     request in
     return try drop.view.make("about.html")
 }
+
+//DB
+//try drop.addProvider(VaporPostgreSQL.Provider.self)
+//
+//let postgreSQL =  PostgreSQL.Database(
+//    dbname: "ddfg482evjh94i",
+//    user: "jfowrhuputignr",
+//    password: "54ff1ff304ec9fb72b82c143bf0beea125d1702942e034fd951e0a4add5553b1"
+//)
+//
+//let version = try postgreSQL.execute("SELECT version()")
 
 /**
     Middleware is a great place to filter
