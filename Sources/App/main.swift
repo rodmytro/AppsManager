@@ -256,7 +256,7 @@ drop.get("about") {
 }
 
 //DB
-try drop.addProvider(VaporPostgreSQL.Provider.self)
+//try drop.addProvider(VaporPostgreSQL.Provider.self)
 
 //let postgreSQL =  PostgreSQL.Database(
 //    dbname: "ddfg482evjh94i",
