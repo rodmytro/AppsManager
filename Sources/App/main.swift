@@ -243,7 +243,7 @@ drop.get("ads") {
     request in
     return try JSON(node: [
             "banner_in_game" : false,
-            "rewarded_to_resume": true,
+            "rewarded_to_resume": false,
             "inter_after_level": true,
             "number_inter_iterations" : 3
         
