@@ -245,7 +245,7 @@ drop.get("ads") {
             "banner_in_game" : false,
             "rewarded_to_resume": false,
             "inter_after_level": true,
-            "number_inter_iterations" : 2
+            "number_inter_iterations" : 5
         
     ])
 }
